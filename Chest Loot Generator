@@ -26,9 +26,14 @@ lootgold = {
     "goldquantity": ["piece", "pieces"]
 }
 
-weaponitemgen = "You have found {} {}. " # eg. common sword
-shielditemgen = "You have found {} {} shield. " # eg. rare heater shield
-potionitemgen = "You have found {} {} {} {}. " # eg. two weak potions of healing
-golditemgen = "You have found {} of gold. "
+selectweaponquality = random.sample(lootweapons["quality"], 1)
+selectweapontype = random.sample(lootweapons["weapons"], 1)
 
-print(random.sample(lootweapons["quality"], 1) + random.sample(lootweapons["weapons"], 1))
+weaponitemgen = "You have found {} {}."
+shielditemgen = "You have found {} {} shield."
+potionitemgen = "You have found {} {} {} {}."
+golditemgen = "You have found {} of gold."
+
+weapon = weaponitemgen.format(selectweaponquality, selectweapontype)
+
+print(weapon)
