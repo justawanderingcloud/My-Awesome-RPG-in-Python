@@ -1,5 +1,5 @@
 # TO DO
-# a lot, ofc
+# min and max sword stats scale with the skill level of generated craft
 
 import random
 
