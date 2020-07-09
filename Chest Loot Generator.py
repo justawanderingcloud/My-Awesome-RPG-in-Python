@@ -3,13 +3,7 @@
 # well it might one day
 # this is just a randomizer that outputs text of what the item will be
 
-# when opened - in this case run - decide based on probabilities what loot to generate
-# lists for each thing
-# function for each thing
-# roll dice and if value agreed upon then run function, else dont run function
-# function rolls dice to see what loot comes out
-
-# when opened - in this case run - decide based on probabilities what loot to generate
+# when opened decide based on probabilities what loot to generate
 # lists for each thing
 # function for each thing
 # roll dice and if value agreed upon then run function, else dont run function
