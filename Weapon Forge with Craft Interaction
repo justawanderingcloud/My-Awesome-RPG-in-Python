@@ -1,32 +1,28 @@
-# currently has issues
-
 import random
 
-
-# rename Craft
 class Craft:
-    def __init__(self, name, craftskill, levelskill):
+    def __init__(self, name, profession, skill):
         self.name = name
-        self.profession = craftskill
-        self.craftskill = levelskill
+        self.profession = profession
+        self.skill = skill
 
     def __str__(self):
         return f"Hello adventurer. My name is {self.name} and I am a {self.profession}."
 
-craftnpc = Craft("Honza", blacksmith, 7)
-
-# for skill in blacksmithnpc:
-#    if blacksmithnpc < 3:
-#        print("Hello there mighty adventurer. My name is", Blacksmith.name(), "and I am at your service. I am a journeyman blacksmith.")
-#    elif blacksmithnpc < 6:
-#        print("Hello there mighty adventurer. My name is", Blacksmith.name(), "and I am at your service. I am a master blacksmith.")
-#    elif blacksmithnpc < 9:
-#        print("Hello there mighty adventurer. My name is", Blacksmith.name(), "and I am at your service. I am a grandmaster blacksmith.")
-#    else:
-#        print("Something Went Wrong")
+    def skilllevel(self):
+        if self.skill < 3:
+            return "I am at your service. I am a journeyman blacksmith."
+        elif self.skill < 6:
+            return "I am at your service. I am a master blacksmith."
+        elif self.skill < 9:
+            return "I am a grandmaster blacksmith."
+        else:
+            return "Something Went Wrong"
 
 
-print(craftnpc)
+craftnpc = Craft("Honza", "blacksmith", 7)
+
+print(craftnpc, craftnpc.skilllevel())
 
 materials = 10
 
