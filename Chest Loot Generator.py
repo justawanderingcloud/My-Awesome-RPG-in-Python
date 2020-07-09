@@ -1,13 +1,10 @@
-# very early build
-# this is what makes chests in my awesome RPG in Python full of loot
-# well it might one day
-# this is just a randomizer that outputs text of what the item will be
-
-# when opened decide based on probabilities what loot to generate
-# lists for each thing
-# function for each thing
-# roll dice and if value agreed upon then run function, else dont run function
-# function rolls dice to see what loot comes out
+# what always bugged me in games is how opening a chest and finding loot work behind the scenes
+# so I decided to write a simple chest loot generator
+# each chest may contain a weapon, a shield, some potions and gold pieces
+# it might also contain nothing and all the possible variations
+# the whole code prints out what you found
+# it asks you to press E and then enter as you would in a game to "open" the chest
+# the code also allows you to open the chest only once, so it does not run indefinitely
 
 import random
 
