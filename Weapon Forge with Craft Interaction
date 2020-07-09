@@ -3,6 +3,9 @@
 
 import random
 
+materials = 10
+craftcost = 10
+
 class Craft:
     def __init__(self, name, profession, skill):
         self.name = name
@@ -29,7 +32,6 @@ craftnpc = Craft("Honza", "blacksmith", 1)
 
 print(craftnpc, craftnpc.skilllevel())
 
-materials = 10
 
 class Sword:
     itemtype = "weapon"
@@ -52,10 +54,10 @@ dice3 = random.randint(1, 20)
 dice4 = random.randint(1, 20)
 
 while materials > 8:
-    print("You have", materials, "iron. Each sword costs 8.")
+    print("You have", materials, "iron. Each sword costs", craftcost, ".")
     swordname = input("Enter the name of your sword you would like to have forged with random attributes.")
     forgedsword = Sword(swordname, dice1, dice2, dice3, dice4)
-    materials -= 8
+    materials -= craftcost
     print(forgedsword)
 else:
-    print("You do not have enough materials to make another weapon. You have only", materials, "iron.")
+    print("You do not have enough materials to make another weapon. You have", materials, "iron.")
