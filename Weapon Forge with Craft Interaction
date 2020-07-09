@@ -1,0 +1,61 @@
+# currently has issues
+
+import random
+
+
+# rename Craft
+class Craft:
+    def __init__(self, name, craftskill, levelskill):
+        self.name = name
+        self.profession = craftskill
+        self.craftskill = levelskill
+
+    def __str__(self):
+        return f"Hello adventurer. My name is {self.name} and I am a {self.profession}."
+
+craftnpc = Craft("Honza", blacksmith, 7)
+
+# for skill in blacksmithnpc:
+#    if blacksmithnpc < 3:
+#        print("Hello there mighty adventurer. My name is", Blacksmith.name(), "and I am at your service. I am a journeyman blacksmith.")
+#    elif blacksmithnpc < 6:
+#        print("Hello there mighty adventurer. My name is", Blacksmith.name(), "and I am at your service. I am a master blacksmith.")
+#    elif blacksmithnpc < 9:
+#        print("Hello there mighty adventurer. My name is", Blacksmith.name(), "and I am at your service. I am a grandmaster blacksmith.")
+#    else:
+#        print("Something Went Wrong")
+
+
+print(craftnpc)
+
+materials = 10
+
+class Sword:
+    itemtype = "weapon"
+    def __init__(self, name, attack, defense, speed, reqstrength):
+        self.name = name
+        self.attack = attack
+        self.defense = defense
+        self.speed = speed
+        self.reqstrength = reqstrength
+
+    def __str__(self):
+        return f"This {self.name} sword requires {self.reqstrength} of Strength points. " \
+               f"Its attack is {self.attack} points, {self.defense} defense points " \
+               f"and has the speed of {self.speed} points. "
+
+
+
+dice1 = random.randint(1, 20)
+dice2 = random.randint(1, 20)
+dice3 = random.randint(1, 20)
+dice4 = random.randint(1, 20)
+
+while materials > 8:
+    print("You have", materials, "iron. Each sword costs 8.")
+    swordname = input("Enter the name of your sword you would like to have forged with random attributes.")
+    forgedsword = Sword(swordname, dice1, dice2, dice3, dice4)
+    materials -= 8
+    print(forgedsword)
+else:
+    print("You do not have enough materials to make another weapon. You have only", materials, "iron.")
