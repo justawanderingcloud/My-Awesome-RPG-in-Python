@@ -9,6 +9,12 @@
 # roll dice and if value agreed upon then run function, else dont run function
 # function rolls dice to see what loot comes out
 
+# when opened - in this case run - decide based on probabilities what loot to generate
+# lists for each thing
+# function for each thing
+# roll dice and if value agreed upon then run function, else dont run function
+# function rolls dice to see what loot comes out
+
 import random
 
 lootweapons = {
@@ -29,7 +35,7 @@ lootpotions = {
 }
 
 lootgold = {
-    "goldquantity": ["piece", "pieces"]
+    "goldquantity": "piece(s)"
 }
 
 selectweaponquality = random.choices(lootweapons["quality"], weights=[80, 15, 5], k=1)
@@ -47,12 +53,12 @@ selectgoldamount = random.randint(1, 20)
 weaponitemgen = "You have found {} {}."
 shielditemgen = "You have found {} {} shield."
 potionitemgen = "You have found {} {} {} {}."
-golditemgen = "You have found {} pieces of gold."
+golditemgen = "You have found {} {} of gold."
 
 weapon = weaponitemgen.format(selectweaponquality, selectweapontype)
 shield = shielditemgen.format(selectshieldquality, selectshieldtype)
 potion = potionitemgen.format(selectpotionquantity, selectpotionquality, lootpotions["potionssubject"], selectpotions)
-gold = golditemgen.format(selectgoldamount)
+gold = golditemgen.format(selectgoldamount, lootgold["goldquantity"])
 
 print(weapon)
 print(shield)
