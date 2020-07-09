@@ -13,17 +13,19 @@ class Craft:
         return f"Hello adventurer. My name is {self.name} and I am a {self.profession}."
 
     def skilllevel(self):
-        if self.skill < 3:
+        if self.skill == 1 and self.skill < 2:
             return "I am at your service. I am a journeyman blacksmith."
-        elif self.skill < 6:
+        elif self.skill > 3 and self.skill < 5:
+            return "I am at your service. I am a journeyman blacksmith."
+        elif self.skill > 6 and self.skill < 8:
             return "I am at your service. I am a master blacksmith."
-        elif self.skill < 9:
+        elif self.skill == 9 or self.skill > 9:
             return "I am a grandmaster blacksmith."
         else:
             return "Something Went Wrong"
 
 
-craftnpc = Craft("Honza", "blacksmith", 7)
+craftnpc = Craft("Honza", "blacksmith", 1)
 
 print(craftnpc, craftnpc.skilllevel())
 
@@ -42,7 +44,6 @@ class Sword:
         return f"This {self.name} sword requires {self.reqstrength} of Strength points. " \
                f"Its attack is {self.attack} points, {self.defense} defense points " \
                f"and has the speed of {self.speed} points. "
-
 
 
 dice1 = random.randint(1, 20)
