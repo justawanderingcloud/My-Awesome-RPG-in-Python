@@ -60,7 +60,16 @@ shield = shielditemgen.format(selectshieldquality, selectshieldtype)
 potion = potionitemgen.format(selectpotionquantity, selectpotionquality, lootpotions["potionssubject"], selectpotions)
 gold = golditemgen.format(selectgoldamount, lootgold["goldquantity"])
 
-print(weapon)
-print(shield)
-print(potion)
-print(gold)
+n = 0
+
+while n < 1:
+    useraction = input("Press (e) to open chest in this dark dungeon you are in as a mighty hero.")
+    if "e" in useraction:
+        print(weapon)
+        print(shield)
+        print(potion)
+        print(gold)
+        n+=1
+    else:
+        print("You did not press (e), so an enemy just escorged you out of his dungeon politely.")
+print("You are out of the dungeon, in your favourite pub, sipping beer tea.")
