@@ -1,10 +1,9 @@
 # TO DO
-# implement cost materials based on skill
+# a lot, ofc
 
 import random
 
 materials = 10
-craftcost = 10
 
 class Craft:
     def __init__(self, name, profession, skill):
@@ -16,25 +15,32 @@ class Craft:
         return f"Hello adventurer. My name is {self.name} and I am a {self.profession}."
 
     def skilllevel(self):
+        global craftcost
+        craftcost = 10
         if self.skill == 1 and self.skill < 2:
+            craftcost -= 0
             return "I am at your service. I am a journeyman blacksmith."
         elif self.skill > 3 and self.skill < 5:
+            craftcost -= 2
             return "I am at your service. I am a journeyman blacksmith."
-        elif self.skill > 6 and self.skill < 8:
+        elif self.skill > 6 and self.skill <= 8:
+            craftcost -= 4
             return "I am at your service. I am a master blacksmith."
-        elif self.skill == 9 or self.skill > 9:
+        elif self.skill >= 9:
+            craftcost -= 6
             return "I am a grandmaster blacksmith."
         else:
             return "Something Went Wrong"
 
 
-craftnpc = Craft("Honza", "blacksmith", 1)
+craftnpc = Craft("Honza", "blacksmith", 8)
 
 print(craftnpc, craftnpc.skilllevel())
 
 
 class Sword:
     itemtype = "weapon"
+
     def __init__(self, name, attack, defense, speed, reqstrength):
         self.name = name
         self.attack = attack
@@ -54,7 +60,7 @@ dice3 = random.randint(1, 20)
 dice4 = random.randint(1, 20)
 
 while materials > 8:
-    print("You have", materials, "iron. Each sword costs", craftcost, ".")
+    print("You have", materials, "iron. Each sword costs", craftcost, "iron.")
     swordname = input("Enter the name of your sword you would like to have forged with random attributes.")
     forgedsword = Sword(swordname, dice1, dice2, dice3, dice4)
     materials -= craftcost
