@@ -60,16 +60,32 @@ shield = shielditemgen.format(selectshieldquality, selectshieldtype)
 potion = potionitemgen.format(selectpotionquantity, selectpotionquality, lootpotions["potionssubject"], selectpotions)
 gold = golditemgen.format(selectgoldamount, lootgold["goldquantity"])
 
-n = 0
+counter = 0
 
-while n < 1:
+while counter < 1:
     useraction = input("Press (e) to open chest in this dark dungeon you are in as a mighty hero.")
     if "e" in useraction:
-        print(weapon)
-        print(shield)
-        print(potion)
-        print(gold)
-        n+=1
+        dice1 = random.randint(1, 6)
+        dice2 = random.randint(1, 6)
+        dice3 = random.randint(1, 6)
+        dice4 = random.randint(1, 6)
+        if dice1 < 3:
+            print(weapon)
+        else:
+            print("This chest had no weapon in it.")
+        if dice2 < 3:
+            print(shield)
+        else:
+            print("This chest had no shield in it.")
+        if dice3 <3:
+            print(potion)
+        else:
+            print("This chest had no potion in it.")
+        if dice4 < 3:
+            print(gold)
+        else:
+            print("This chest had no gold pieces in it.")
+        counter+=1
     else:
-        print("You did not press (e), so an enemy just escorged you out of his dungeon politely.")
+        print("You did not press (e), so an enemy just escorted you out of his dungeon politely.")
 print("You are out of the dungeon, in your favourite pub, sipping beer tea.")
