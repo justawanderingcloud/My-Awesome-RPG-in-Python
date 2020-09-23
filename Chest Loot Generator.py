@@ -1,13 +1,16 @@
-# what always bugged me in games is how opening a chest and finding loot work behind the scenes
-# so I decided to write a simple chest loot generator
-# each chest may contain a weapon, a shield, some potions and gold pieces
-# it might also contain nothing and all the possible variations
-# the whole code prints out what you found
-# it asks you to press E and then enter as you would in a game to "open" the chest
-# the code also allows you to open the chest only once, so it does not run indefinitely
+"""
+what always bugged me in games is how opening a chest and finding loot work behind the scenes
+so I decided to write a simple chest loot generator
+each chest may contain a weapon, a shield, some potions and gold pieces
+it might also contain nothing and all the possible variations
+the whole code prints out what you found
+it asks you to press E and then enter as you would in a game to "open" the chest
+the code also allows you to open the chest only once, so it does not run indefinitely
+"""
 
 import random
 
+# pieces of words to generate loot names
 lootweapons = {
     "quality": ["common", "rare", "epic"],
     "weapons": ["dagger", "sword", "axe"]
@@ -29,6 +32,7 @@ lootgold = {
     "goldquantity": "piece(s)"
 }
 
+# random selection of templates with weighted choices
 selectweaponquality = random.choices(lootweapons["quality"], weights=[80, 15, 5], k=1)
 selectweapontype = random.sample(lootweapons["weapons"], 1)
 
@@ -41,6 +45,7 @@ selectpotions = random.sample(lootpotions["potioneffect"], 1)
 
 selectgoldamount = random.randint(1, 20)
 
+# text output
 weaponitemgen = "You have found {} {}."
 shielditemgen = "You have found {} {} shield."
 potionitemgen = "You have found {} {} {} {}."
@@ -51,6 +56,7 @@ shield = shielditemgen.format(selectshieldquality, selectshieldtype)
 potion = potionitemgen.format(selectpotionquantity, selectpotionquality, lootpotions["potionssubject"], selectpotions)
 gold = golditemgen.format(selectgoldamount, lootgold["goldquantity"])
 
+# opening chest
 counter = 0
 
 while counter < 1:
